@@ -1,0 +1,7 @@
+node_modules/*
+resources/*
+!resources/.keep
+!resources/*.pdf
+*.log
+
+.DS_Store

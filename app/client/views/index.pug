@@ -1,0 +1,46 @@
+doctype html
+html(lang='en', ng-app='website' ng-controller='websiteController')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='PA\'s Portfolio')
+    meta(name='author', content='Philip Rurks Technologies')
+    base(href='/')
+    link(href='/resources/main.css', rel='stylesheet')
+    title PA's Portfolio
+  body
+    .global-wrapper
+      .global-container
+        .global-content
+          header.header-section
+            .header-content
+              .logo-container
+                .PA-logo(ui-sref='landing')
+              .title-description-container(ng-show='!showUiView')
+                h1 Philip Rurka
+                h2 Frontend Developer
+                p Dreamcatcher irony echo park, four loko sartorial pour-over aesthetic. Craft beer hot chicken marfa mixtape.
+              .navbar-container
+                .navbar-content
+                  ul
+                    li.item
+                      .item-content
+                        .navbar-logo.blog-logo(ui-sref-active='active-tab', ui-sref='blog')
+                    li.item
+                      .item-content
+                        .navbar-logo.projects-logo(ui-sref-active='active-tab', ui-sref='project')
+                    li.item
+                      .item-content
+                        .navbar-logo.contributers-logo(ui-sref-active='active-tab', ui-sref='contributor')
+                    li.item
+                      .item-content
+                        .navbar-logo.about-logo(ui-sref-active='active-tab', ui-sref='about')
+
+
+
+          ui-view(ng-show='showUiView')
+
+          footer.footer-section
+
+    script(src='/resources/main.js')

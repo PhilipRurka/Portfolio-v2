@@ -1,0 +1,52 @@
+.biweekly-section {
+  padding: 30px;
+
+  .center-content {
+
+    h1 {
+      margin: 0;
+      font-size: 21px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid black;
+      display: inline-block;
+    }
+
+    .biweekly-item {
+
+      h2 {
+        margin: 0;
+        font-size: 18px;
+        margin-top: 30px;
+      }
+
+      hr {
+        margin: 5px 0 0;
+        width: 25px;
+        color: black;
+        border-style: solid;
+        border-top: none;
+      }
+
+      ul {
+        padding-left: 26px;
+
+        .item {
+
+          p {
+            font-size: 14px;
+            margin: 0;
+          }
+        }
+        .item + .item {
+          p {
+            margin-top: 5px;
+          }
+        }
+
+        &.list-style-none {
+          list-style: none;
+        }
+      }
+    }
+  }
+}

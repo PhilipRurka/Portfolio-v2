@@ -52,5 +52,5 @@ app.use(require('./app/server/controllers'));
 /**********************************/
 const env = process.env.NODE_ENV || 'DEVELOP';
 app.listen(process.env.PORT);
-console.log('Website-SimpTek \nENVIRONMENT: ' + env +
+console.log('Portfolio \nENVIRONMENT: ' + env +
   '\nListening On Port ' + process.env.PORT);

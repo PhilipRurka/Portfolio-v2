@@ -1,0 +1,218 @@
+@mixin media($dir, $width) {
+  @if $dir == 'min' {
+    @media (min-width: #{$width}) {
+      @content
+    };
+  } @else {
+    @media (max-width: #{$width} - 1) {
+      @content
+    };
+  };
+};
+
+
+
+
+
+
+
+
+
+
+.test
+    .popup-modal-content
+
+    %popup-modal {
+  position: absolute;
+
+  .popup-modal-content {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+  }
+}
+
+%popup-modal-BA {
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+  }
+
+  &::before {
+    z-index: -1;
+  }
+
+  &::after {
+    z-index: 1;
+  }
+}
+
+/**************************************/
+/********** Parent Containers *********/
+/**************************************/
+
+// Top && Right
+@mixin popup-modal-1100($top, $right, $height, $width, $radius, $shadow, $color) {
+
+  @extend %popup-modal;
+  top: $top;
+  right: $right;
+  height: $height;
+  width: $width;
+  box-shadow: $shadow;
+
+  .popup-modal-content {
+    background-color: $color;
+    border-radius: $radius;
+  }
+}
+
+// Top && Left
+@mixin popup-modal-1001($top, $left, $height, $width, $radius, $shadow, $color) {
+
+  @extend %popup-modal;
+  top: $top;
+  left: $left;
+  height: $height;
+  width: $width;
+  box-shadow: $shadow;
+
+  .popup-modal-content {
+    background-color: $color;
+    border-radius: $radius;
+  }
+}
+
+// Bottom && Right
+@mixin popup-modal-0110($bottom, $right, $height, $width, $radius, $shadow, $color) {
+
+  @extend %popup-modal;
+  bottom: $bottom;
+  right: $right;
+  height: $height;
+  width: $width;
+  box-shadow: $shadow;
+
+  .popup-modal-content {
+    background-color: $color;
+    border-radius: $radius;
+  }
+}
+
+// Bottom && Left
+@mixin popup-modal-0011($bottom, $left, $height, $width, $radius, $shadow, $color) {
+
+  @extend %popup-modal;
+  bottom: $bottom;
+  left: $left;
+  height: $height;
+  width: $width;
+  box-shadow: $shadow;
+
+  .popup-modal-content {
+    background-color: $color;
+    border-radius: $radius;
+  }
+}
+
+/*************************************/
+/********** Before && After **********/
+/*************************************/
+
+// Top && Left --> Triangle pointing bottom or right
+@mixin popup-modal-BA-1001($top, $left, $height, $width, $shadow, $color) {
+  @extend %popup-modal-BA;
+  &::before,
+  &::after {
+    top: $top;
+    left: $left;
+    height: $height;
+    width: $width;
+    color: $color;
+
+    // Check for position of triangle
+    @if $left == 100% {
+      transform: translateX(-50%) rotate(45deg);
+    } @else if $top == 100% {
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  &::before {
+    box-shadow: $shadow;
+  }
+}
+
+// Top && right --> Triangle pointing bottom or left
+@mixin popup-modal-BA-1100($top, $right, $height, $width, $shadow, $color) {
+  @extend %popup-modal-BA;
+  &::before,
+  &::after {
+    top: $top;
+    right: $right;
+    height: $height;
+    width: $width;
+    color: $color;
+
+    // Check for position of triangle
+    @if $right == 100% {
+      transform: translateX(50%) rotate(45deg);
+    } @else if $top == 100%{
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  &::before {
+    box-shadow: $shadow;
+  }
+}
+
+// bottom && right --> Triangle pointing top or left
+@mixin popup-modal-BA-0110($bottom, $right, $height, $width, $shadow, $color) {
+  @extend %popup-modal-BA;
+  &::before,
+  &::after {
+    bottom: $bottom;
+    right: $right;
+    height: $height;
+    width: $width;
+    color: $color;
+
+    // Check for position of triangle
+    @if $right == 100% {
+      transform: translateX(50%) rotate(45deg);
+    } @else if $bottom == 100% {
+      transform: translateY(50%) rotate(45deg);
+    }
+  }
+
+  &::before {
+    box-shadow: $shadow;
+  }
+}
+
+// bottom && left --> Triangle pointing top or right
+@mixin popup-modal-BA-0011($bottom, $left, $height, $width, $shadow, $color) {
+  @extend %popup-modal-BA;
+  &::before,
+  &::after {
+    bottom: $bottom;
+    left: $left;
+    height: $height;
+    width: $width;
+    color: $color;
+
+    // Check for position of triangle
+    @if $left == 100% {
+      transform: translateX(-50%) rotate(45deg);
+    } @else if $bottom == 100% {
+      transform: translateY(50%) rotate(45deg);
+    }
+  }
+
+  &::before {
+    box-shadow: $shadow;
+  }
+}

@@ -1,6 +1,6 @@
 'use strict';
 
-app.controller('homepageController', ['$scope', '$timeout',
+app.controller('websiteController', ['$scope', '$timeout',
   function($scope, $timeout) {
     /*************************************/
     /********** SCOPE VARIABLES **********/

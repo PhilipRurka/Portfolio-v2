@@ -1,0 +1,9 @@
+.center-section {
+  @include media(max, $sm) {
+    display: inline-block;
+  };
+
+  .center-content {
+
+  }
+}

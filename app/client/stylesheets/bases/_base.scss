@@ -1,0 +1,37 @@
+//========== Variables ==========//
+$var-global-top-padding       : 50px;
+
+
+
+//========== START Global START ==========//
+.global-wrapper {
+  min-height: 100vh;
+
+  .global-container {
+    background-color: $Pizazz;
+    padding-top: $var-global-top-padding;
+
+    .global-content {
+      min-height: calc(100vh - #{$var-global-top-padding});
+      background-color: $white;
+      width: 75%;
+      max-width: 800px;
+      display: table;
+      margin: auto;
+    }
+  }
+}
+//========== END Global END ==========//
+
+//========== START Pages START ==========//
+.pages-wrapper {
+
+  .pages-container {
+
+    .pages-content {
+
+    }
+  }
+}
+
+//========== END Pages END ==========//

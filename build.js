@@ -72,7 +72,6 @@ var result = sass.render(configSass, function(error, result) {
 // JS Build
 const files = globAll.sync([
   __dirname + '/app/client/javascripts/vendors/angular.js',
-  __dirname + '/app/client/javascripts/vendors/angulartic.js',
   __dirname + '/app/client/javascripts/vendors/jquery.js',
   __dirname + '/app/client/javascripts/vendors/*.js',
   __dirname + '/app/client/javascripts/app.js',

@@ -2,7 +2,7 @@
 //******************************
 //********** ANGULAR **********
 //******************************
-var app = angular.module('website', ['ui.router', 'ngResource'
+var app = angular.module('website', ['ui.router', 'ngResource', 'angulartics', 'angulartics.google.analytics', 'ngAutocomplete'
 ]);
 
 
@@ -13,7 +13,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
   '$compileProvider',
   function($stateProvider, $urlRouterProvider, $locationProvider,
     $compileProvider) {
-
+debugger;
     $compileProvider.debugInfoEnabled(false);
 
     $urlRouterProvider.otherwise('/');
@@ -23,7 +23,10 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
       .state('homePage', {
         url: '/',
         templateUrl: 'partials/homepage',
-        controller: 'homepageController'
+        controller: 'homepageController',
+        resolve: function() {
+          debugger;
+        }
       })
   }
 ]);
@@ -33,10 +36,7 @@ app.config(['$stateProvider', '$urlRouterProvider', '$locationProvider',
 //********** RUN **********
 //*************************
 
-// TODO: Understand what this does.
-// app.run(['$rootScope', function($rootScope) {
 
-// }]);
 
 
 //*******************************

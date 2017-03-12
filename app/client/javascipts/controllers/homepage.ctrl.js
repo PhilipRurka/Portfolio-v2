@@ -5,6 +5,7 @@ app.controller('homepageController', ['$scope', '$timeout',
     /*************************************/
     /********** SCOPE VARIABLES **********/
     /*************************************/
+    debugger;
 
 
     /*************************************/
@@ -12,5 +13,5 @@ app.controller('homepageController', ['$scope', '$timeout',
     /*************************************/
 
 
-  }
+  };
 ]);

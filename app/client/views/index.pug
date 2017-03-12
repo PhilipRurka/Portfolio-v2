@@ -1,0 +1,15 @@
+html(ng-app='website', ng-controller='websiteController')
+  head
+    //- META DATA
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    //- CSS
+    link(rel='stylesheet', href='/resources/main.css')
+
+  body
+    h1 Testing Index
+    ui-view
+
+    //- MAIN
+    script(src="/resources/main.js")

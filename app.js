@@ -54,3 +54,10 @@ const env = process.env.NODE_ENV || 'DEVELOP';
 app.listen(process.env.PORT);
 console.log('Portfolio \nENVIRONMENT: ' + env +
   '\nListening On Port ' + process.env.PORT);
+console.log('╲╲╭━━━━╮╲╲');
+console.log('╭╮┃▆┈┈▆┃╭╮');
+console.log('┃╰┫▽▽▽▽┣╯┃');
+console.log('╰━┫△△△△┣━╯');
+console.log('╲╲┃┈┈┈┈┃╲╲');
+console.log('╲╲┃┈┏┓┈┃╲╲');
+console.log('▔▔╰━╯╰━╯▔▔');

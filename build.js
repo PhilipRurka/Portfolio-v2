@@ -39,17 +39,11 @@ const prefixer = postcss([autoprefixer({
 console.log('ENVIRONMENT: ' + env);
 
 if (env === 'PRODUCTION') {
-  // On Production
-  // Uglify SCSS, Autoprefix
-  // Uflify JS
   console.log('SCSS - Compile SCSS, Uglify CSS, Autoprefix');
   console.log('JS   - Uglify JS');
   configSass.outputStyle = 'compressed';
   configSass.sourceComments = false;
 } else {
-  // On Other
-  // Complile SCSS, Add Soure Comments, Autoprefix
-  // ConcatJS, Add Soure Comments
   console.log('SCSS - Compile SCSS, Add Source Comments, Autoprefix');
   console.log('JS   - Concat JS, Add Source Comments');
 }

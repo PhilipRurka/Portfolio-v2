@@ -1,0 +1,15 @@
+.about
+  .dynamic-wrapper
+    .dynamic-container
+      .dynamic-content
+        p {{textAreaText}}
+    .arrow-right
+  textarea.dynamic-textarea(ng-model='textAreaText', ng-keyup='checkHeight()')
+
+
+
+
+
+.expand-wrapper(ng-click='expandTable()')
+  .expand-container
+    .expand-content

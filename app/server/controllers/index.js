@@ -6,8 +6,6 @@
 var express = require('express');
 var router = express.Router();
 
-router.use('/subscribe', require('./subscribe'));
-
 /* GET home page. */
 
 
@@ -21,13 +19,13 @@ router.get('/partials/:name', function(req, res) {
 		'partial': test
 	});
 	res.render('partials/' + test, {
-		title: 'SimpTek Inc'
+		title: 'PA Inc'
 	});
 });
 
 router.get('/*', function(req, res, next) {
 	res.render('index', {
-		title: 'SimpTek'
+		title: 'PA Portfolio'
 	});
 });
 

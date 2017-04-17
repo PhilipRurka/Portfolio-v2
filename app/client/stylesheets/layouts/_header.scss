@@ -1,0 +1,79 @@
+.header-section {
+  padding: 50px 0px;
+  border-bottom: 1px solid black;
+
+  .header-content {
+    padding: 0 100px;
+  }
+}
+
+
+
+
+//========== Logo ==========//
+.logo-container {
+
+
+  .PA-logo {
+    background-color: $black;
+    margin: 0 auto 18.5px;
+    height: 30px;
+    width: 30px;
+  }
+}
+
+
+//========== Title Description ==========//
+.title-description-container {
+  text-align: center;
+  display: inline-block;
+
+  h1 {
+    font-size: 28px;
+    margin-top: 0;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
+
+
+//========== Navbar ==========//
+.navbar-container {
+
+  .navbar-content {
+
+    ul {
+      list-style: none;
+      margin: auto;
+      display: table;
+
+      .item {
+        display: inline-block;
+
+        .item-content {
+
+          .navbar-logo {
+            width: auto;
+            height: 30px;
+            width: 30px;
+            background-color: black;
+          }
+
+          .active-tab {
+            background-color: $Pizazz;
+          }
+        }
+      }
+
+      .item + .item {
+        margin-left: 10px;
+      }
+    }
+  }
+}

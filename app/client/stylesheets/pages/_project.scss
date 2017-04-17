@@ -1,0 +1,141 @@
+//========== Variables ==========//
+$var-img-height           : 300px;
+
+.project-wrapper {
+
+  .showcase-section {
+
+  }
+
+  .options-section {
+
+    ul {
+      list-style: none;
+      margin: 0 0 30px;
+      box-sizing: border-box;
+
+      &.showcase-project {
+        position: relative;
+        padding-top: 360px;
+      }
+
+      .item {
+        padding-top: 30px;
+
+        // Selected
+        &.selected-project {
+          position: absolute;
+          top: 0;
+          left: 0;
+          padding-left: 30px;
+          padding-right: 30px;
+          width: 100%;
+          padding-bottom: 25px;
+          border-bottom: 1px solid;
+
+          .text-section {
+            display: inline-block!important;
+          }
+
+          .p-container {
+            display: none;
+          }
+
+          .img-split:hover {
+            .img-top-split,
+            .img-bottom-split {
+              transform: initial!important;
+            }
+          }
+
+          .img-split {
+            width: calc(33.33% - 20px)!important;
+            display: inline-block;
+          }
+        }
+
+        // General
+        .item-content {
+          .img-split {
+            height: $var-img-height;
+            overflow: hidden;
+            position: relative;
+
+            &:hover {
+              .img-top-split {
+                transform: translateY(-25%);
+              }
+              .img-bottom-split {
+                transform: translateY(25%);
+              }
+            }
+
+            .img-top-split,
+            .img-bottom-split {
+              background-repeat: no-repeat;
+              width: 100%;
+              height: $var-img-height / 2;
+              background-size: 100%;
+              transform: translate3D(0,0,0);
+              transition: transform .25s ease;
+              background-size: 265%;
+            }
+
+            .img-top-split {
+              background-position: 34% 0;
+            }
+
+            .img-bottom-split {
+              background-position: 34% calc(#{$var-img-height} / -2);
+            }
+
+            .p-container {
+              background-color: $real-dark-gray;
+              height: 100%;
+              width: 100%;
+              position: absolute;
+              top: 0;
+              left: 0;
+
+              p {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                display: inline-block;
+                margin: 0;
+                color: $white;
+                font-size: 24px;
+              }
+            }
+          }
+
+          .text-section {
+            display: none;
+            vertical-align: top;
+            width: calc(66.66% + 20px);
+            text-align: right;
+
+            .title {
+              h3 {
+                margin: 0;
+              }
+            }
+
+            .description {
+              p {
+
+              }
+            }
+
+            .contributions {
+              p {
+
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

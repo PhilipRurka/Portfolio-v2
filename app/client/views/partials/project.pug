@@ -1,0 +1,20 @@
+.pages-wrapper.project-wrapper
+  .pages-container
+    .pages-content
+      .showcase-section
+      .options-section
+        ul.project-content.container-fluid
+          li.iot-place.item.col-sm-6.col-md-4(ng-repeat='project in projects')
+            .item-content
+              .img-split
+                .p-container
+                  p {{project.title}}
+                .img-top-split(ng-style='{"background-image": "url(/images/{{project.img}})", "background-position": "{{project.img_position}} 0"}')
+                .img-bottom-split(ng-style='{"background-image": "url(/images/{{project.img}})", "background-position": "{{project.img_position}} calc(300px / -2)"}')
+              .text-section
+                .title
+                  h3 {{project.title}}
+                .description
+                  p {{project.description}}
+                .contributors
+                  p {{project.contributors}}

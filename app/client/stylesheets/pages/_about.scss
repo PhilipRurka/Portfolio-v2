@@ -1,0 +1,38 @@
+.about {
+  .dynamic-wrapper {
+    position: relative;
+    width: 100px;
+    margin: 100px;
+    background-color: #FF9600;
+
+    .dynamic-container {
+      height: 100%;
+
+      .dynamic-content {
+        height: 100%;
+
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .dynamic-textarea {
+    margin-bottom: 100px;
+  }
+
+  .arrow-right {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: 60px solid transparent;
+    border-bottom: 60px solid transparent;
+
+    border-left: 60px solid green;
+
+
+  }
+}

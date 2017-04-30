@@ -4,6 +4,7 @@ app.controller('contributorController', ['$scope', '$timeout',
     /*************************************/
     /********** SCOPE VARIABLES **********/
     /*************************************/
+    $scope.active1 = false;
 
 
     /*************************************/

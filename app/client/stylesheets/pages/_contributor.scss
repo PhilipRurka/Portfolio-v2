@@ -1,0 +1,159 @@
+$var-button-default-height: 30px;
+
+h1 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  text-align: center;
+  transform-style: preserve-3d;
+
+  .item {
+
+    
+    .item-content {
+      padding: 10px;
+      
+
+      .bg-img,
+      .bg-img-2 {
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 200px;
+      }
+
+      button {
+        position: relative;
+        color: cornflowerblue;
+        background-color: white;
+        border: 2px solid cornflowerblue;
+        padding: 0;
+        height: 30px;
+        width: 80px;
+        overflow: hidden;
+        outline: none;
+        transition: 
+          border-radius 0.5s ease-out 0s,
+          height 1s ease-out 0s,
+          width 1s ease-out 0s,
+          margin-top 1s ease-out 0s,
+          opacity 0s 0.8s;
+        
+
+        span {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        &:hover {
+          border-radius: 10px;
+        }
+
+        &.active {
+          border-radius: 50%;
+          height: 0;
+          width: 0;
+          margin-top: calc(#{$var-button-default-height} / 2);
+          opacity: 0;
+        }
+      }
+    }
+
+    &:nth-child(1) .bg-img {
+      background-image: url('/images/t&t-1.jpg')
+    }
+    &:nth-child(2) .bg-img {
+      background-image: url('/images/t&t-2.jpg')
+    }
+    &:nth-child(3) .bg-img {
+      background-image: url('/images/t&t-3.jpg')
+    }
+    &:nth-child(4) .bg-img {
+      background-image: url('/images/t&t-4.jpg')
+    }
+    &:nth-child(5) .bg-img {
+      background-image: url('/images/t&t-5.jpg')
+    }
+    &:nth-child(6) .bg-img {
+      background-image: url('/images/t&t-6.jpg')
+    }
+    &:nth-child(7) .bg-img {
+      background-image: url('/images/t&t-7.jpg')
+    }
+    &:nth-child(8) .bg-img {
+      background-image: url('/images/t&t-8.jpg')
+    }
+  }
+}
+
+.two {
+  perspective: 700px;
+  .item-content {
+    perspective: 700px;
+  }
+
+  .img-wrapper {
+    transform-style: preserve-3d;
+  }
+
+  .bg-img-2 {
+    background-image: url('/images/t&t-4.jpg');
+    transform: rotateY(180deg);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  .item {
+    transition: 
+    transform 0.5s cubic-bezier(0.47,-0.36, 0.57, 1.41),
+    border-radius 0.5s ease-out 0s
+    !important;
+  }
+
+  .img-wrapper,
+  .text-wrapper,
+  button {
+    transition: 
+    transform 1000s cubic-bezier(0.47,-0.36, 0.57, 1.41),
+    border-radius 0.5s ease-out 0s
+    !important;
+  }
+
+  .item:nth-child(2) {
+    transform-origin: 0% 100%;
+    &:hover {
+      transform: rotate3d(1, 1, 0, -20deg);
+    }
+  }
+
+  .item:first-child:hover {
+      transform: rotateY(40deg);
+
+    button:hover,
+    .img-wrapper:hover,
+    .text-wrapper:hover {
+      transform: rotateY(500turn);
+    }
+  }
+
+  .item:last-child:hover {
+      transform: rotateY(-40deg);
+
+  .bg-img,
+  .bg-img-2 {
+    backface-visibility: hidden;
+  }
+
+    button:hover,
+    .img-wrapper:hover,
+    .text-wrapper:hover {
+      transform: rotateY(500turn);
+    }
+  }
+}

@@ -14,10 +14,10 @@ var router = express.Router();
 //************************************
 router.get('/partials/:name', function(req, res) {
 	var test = req.params.name;
-	req.log.info({
-		status: 200,
-		'partial': test
-	});
+	// req.log.info({
+	// 	status: 200,
+	// 	'partial': test
+	// });
 	res.render('partials/' + test, {
 		title: 'PA Inc'
 	});

@@ -10,6 +10,7 @@ html(lang='en', ng-app='website' ng-controller='websiteController')
     link(href='/resources/main.css', rel='stylesheet')
     title PA's Portfolio
   body
+    canvas#myCanvas(ng-class='{"show-canvas" : showCanvas}')
     .global-wrapper
       .global-container
         .global-content

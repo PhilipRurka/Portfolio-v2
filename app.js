@@ -27,14 +27,6 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-
-/********************************/
-/********** MIDDLEWARE **********/
-/********************************/
-// Middleware for all files
-app.use(require(__dirname + '/app/server/middlewares/logger.js'));
-
-
 /************************************/
 /********** STATICS ROUTES **********/
 /************************************/

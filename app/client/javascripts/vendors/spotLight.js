@@ -1,5 +1,20 @@
 var spotLight = {
-  canvas: document.getElementById('myCanvas'),
+
+  initialize: function() {
+    document.body.classList.add('transition');
+    document.body.innerHTML += ('<div id="FCfirstCanvas"></div>');
+    var firstCanvasDoc = document.getElementById('FCfirstCanvas');
+    firstCanvasDoc.innerHTML += ('<div id="FCmenu"></div>');
+    firstCanvasDoc.innerHTML += ('<canvas id="FCmyCanvas"></canvas>');
+    this.canvas = document.getElementById('FCmyCanvas');
+
+    var menuDoc = document.getElementById('FCmenu');
+    menuDoc.innerHTML += ('<div id="FCsize"></div>');
+    var sizeDoc = document.getElementById('FCsize');
+    sizeDoc.innerHTML += ('<label>Size:</label>');
+    sizeDoc.innerHTML += ('<input type="number">');
+  },
+
   /** Height of the window */
   height: null,
   /** Width of the window */
@@ -16,47 +31,55 @@ var spotLight = {
   /** Show and hide the canvas */
   showCanvas: function(boolean) {
     if(boolean === true) {
-      this.canvas.classList.add('show-canvas');
+      document.body.classList.add('showCanvas');
     } else {
-      this.canvas.classList.remove('show-canvas');
+      document.body.classList.remove('showCanvas');
     }
   },
 
   spotLightInit: function(key) {
-    this.stateCheck = true;
     if(event.key === key) {
-      if(!this.canvas.classList.contains('show-canvas')) {
+      this.stateCheck = true;
+      if(!document.body.classList.contains('showCanvas')) {
         // Set height and width of the canvas
-        this.height = $(window).height();
+        this.height = $(window).height() - 50;
         this.width = $(window).width();
         this.canvas.height = this.height;
         this.canvas.width = this.width;
 
-        $('body').mouseover(function() {
-          $this = spotLight;
-          if(!$this.canvas.classList.contains('show-canvas') && $this.stateCheck) {
-            $this.showCanvas(true);
-            $this.canvas.addEventListener('mousemove', function(event) {
-              $this.drawFunc($this.canvas, $this.getMousePosition(event));
-            })
-          }
-        })
+        this.bodyMouseover();
       } else {
         this.showCanvas(false);
         this.stateCheck = false;
-        $('body').mouseover(function(event){
-          event.preventDefault();
-        });
       }
     }
   },
+
+  
 
   /** Outputs the coordinates of the mouse cursor on move */
   getMousePosition: function(event) {
     return {
       x:  event.clientX,
-      y:  event.clientY
+      y:  event.clientY - 50
     };
+  },
+
+  bodyMouseover: function() {
+    $('body').mouseover(function() {
+      $this = spotLight;
+      if(!document.body.classList.contains('showCanvas') && $this.stateCheck) {
+        $this.showCanvas(true);
+        $this.canvasMouseover();
+      }
+    })
+  },
+
+  canvasMouseover: function() {
+    this.canvas.addEventListener('mousemove', function(event) {
+      $this = spotLight;
+      $this.drawFunc($this.canvas, $this.getMousePosition(event));
+    })
   },
 
   /**

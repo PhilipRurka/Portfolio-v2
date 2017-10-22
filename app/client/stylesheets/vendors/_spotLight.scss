@@ -1,0 +1,72 @@
+$var-menuHeight: 50px;
+
+.showCanvas {
+  margin-top: $var-menuHeight!important;
+
+  #FCfirstCanvas {
+    opacity: 1;
+    height: calc(100vh + #{$var-menuHeight});
+    pointer-events: initial;
+
+    #FCmyCanvas {
+      height: calc(100vh - #{$var-menuHeight});
+    }
+
+    #FCmenu {
+      height: $var-menuHeight;
+    }
+  }
+}
+
+.transition {
+  margin-top: 0;
+  transition: margin 1s ease;
+}
+
+#FCfirstCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 100000000;
+  height: calc(100vh);
+  width: 100vw;
+  opacity: 0;
+  pointer-events: none;
+  cursor: pointer;
+  transition: opacity 1s ease,
+              height 1s ease;
+
+  #FCmyCanvas {
+    height: calc(100vh);
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    transition: height 1s ease;
+  }
+
+  #FCmenu {
+    width: 100vw;
+    height: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 20px;
+    background-color: dimgrey;
+    transition: height 1s ease;
+  }
+
+  #FCsize {
+    display: inline-block;
+    padding:  13px 0;
+
+    label {
+      color: white;
+      margin-right: 4px;
+    }
+
+    input {
+      width: 40px;
+    }
+  }
+}
